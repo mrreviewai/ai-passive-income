@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Checklist: 3 AI Tools That Pay You Every Month (Even While You Sleep)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0a0a0a;
+    --off-white: #f5f2ee;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --border: rgba(201,168,76,0.25);
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  body { font-family: var(--sans); background: var(--black); color: var(--off-white); min-height: 100vh; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+  .glow { position: fixed; top: -200px; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+  .container { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; padding: 0 24px; }
+  .topbar { border-bottom: 1px solid var(--border); padding: 14px 0; text-align: center; }
+  .topbar span { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  .hero { padding: 64px 0 48px; text-align: center; animation: fadeUp 0.7s ease 0.1s both; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 24px; }
+  .eyebrow::before, .eyebrow::after { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); opacity: 0.5; }
+  h1 { font-family: var(--serif); font-size: clamp(32px, 6.5vw, 50px); line-height: 1.1; font-weight: 400; margin-bottom: 18px; }
+  h1 em { font-style: italic; color: var(--gold-light); }
+  .subtitle { font-size: 15px; line-height: 1.7; color: rgba(245,242,238,0.6); font-weight: 300; max-width: 460px; margin: 0 auto 44px; }
+
+  /* TOOL CARDS */
+  .tools-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 44px; animation: fadeUp 0.7s ease 0.25s both; }
+  .tool-card { background: linear-gradient(135deg, #171410 0%, #111009 100%); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; }
+  .tool-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .tool-info { flex: 1; }
+  .tool-name { font-size: 14px; font-weight: 500; color: var(--off-white); margin-bottom: 2px; }
+  .tool-desc { font-size: 12px; color: rgba(245,242,238,0.5); font-weight: 300; }
+  .tool-comm { text-align: right; flex-shrink: 0; }
+  .comm-rate { font-size: 15px; font-weight: 600; color: var(--gold); display: block; }
+  .comm-type { font-size: 10px; color: rgba(245,242,238,0.4); text-transform: uppercase; letter-spacing: 0.08em; }
+  .tool-card.highlight { border-color: rgba(201,168,76,0.5); position: relative; }
+  .highlight-badge { position: absolute; top: -9px; left: 16px; background: var(--gold); color: var(--black); font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+
+  /* WHAT'S INSIDE */
+  .inside-section { margin-bottom: 40px; animation: fadeUp 0.7s ease 0.35s both; }
+  .inside-label { font-size: 11px; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; text-align: center; }
+  .inside-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .inside-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 14px 16px; }
+  .inside-item strong { display: block; font-size: 13px; font-weight: 500; color: var(--off-white); margin-bottom: 3px; }
+  .inside-item span { font-size: 12px; color: rgba(245,242,238,0.45); line-height: 1.5; font-weight: 300; }
+
+  /* FORM */
+  .form-section { background: linear-gradient(145deg, #141210 0%, #0f0d0b 100%); border: 1px solid var(--border); border-radius: 20px; padding: 36px 32px; margin-bottom: 32px; position: relative; overflow: hidden; animation: fadeUp 0.7s ease 0.45s both; }
+  .form-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 40%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .form-label { text-align: center; font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+  .form-sub { text-align: center; font-size: 13px; color: rgba(245,242,238,0.4); margin-bottom: 24px; font-weight: 300; }
+  .input-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+  input[type="text"], input[type="email"] { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 13px 16px; font-family: var(--sans); font-size: 14px; font-weight: 300; color: var(--off-white); outline: none; transition: border-color 0.2s; }
+  input::placeholder { color: rgba(245,242,238,0.28); }
+  input:focus { border-color: rgba(201,168,76,0.45); }
+  .cta-btn { width: 100%; background: var(--gold); color: var(--black); border: none; border-radius: 10px; padding: 15px 24px; font-family: var(--sans); font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.02em; transition: all 0.2s; position: relative; overflow: hidden; }
+  .cta-btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 100%); pointer-events: none; }
+  .cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(201,168,76,0.28); }
+  .privacy { text-align: center; font-size: 11px; color: rgba(245,242,238,0.28); margin-top: 10px; font-weight: 300; }
+
+  /* SOCIAL PROOF */
+  .social-proof { text-align: center; margin-bottom: 48px; animation: fadeUp 0.7s ease 0.55s both; }
+  .sp-row { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .sp-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; }
+  .sp-text { font-size: 12px; color: rgba(245,242,238,0.38); font-weight: 300; }
+  .sp-text strong { color: var(--gold); font-weight: 500; }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 20px 0; text-align: center; font-size: 11px; color: rgba(245,242,238,0.2); font-weight: 300; }
+  footer a { color: rgba(245,242,238,0.3); text-decoration: none; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 480px) { .form-section { padding: 24px 18px; } h1 { font-size: 30px; } .inside-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="container">
+
+  <div class="topbar">
+    <span>Free Checklist — No Email Capture Required to Read This</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">AI Tools · Passive Income</div>
+    <h1>3 AI Tools That Pay You <em>Every Single Month</em></h1>
+    <p class="subtitle">
+      The exact programs I promote — with recurring commissions, long cookie windows, 
+      and commission math so you can see what's actually possible.
+    </p>
+  </div>
+
+  <div class="tools-grid">
+    <div class="tool-card highlight">
+      <div class="highlight-badge">Highest Commission</div>
+      <div class="tool-icon" style="background: rgba(201,168,76,0.12);">🐝</div>
+      <div class="tool-info">
+        <div class="tool-name">beehiiv</div>
+        <div class="tool-desc">Newsletter platform for creators &amp; online businesses</div>
+      </div>
+      <div class="tool-comm">
+        <span class="comm-rate">50–60%</span>
+        <span class="comm-type">12 months · 60d cookie</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon" style="background: rgba(90,140,255,0.1);">🎙️</div>
+      <div class="tool-info">
+        <div class="tool-name">ElevenLabs</div>
+        <div class="tool-desc">AI voice generation — #1 tool for faceless creators</div>
+      </div>
+      <div class="tool-comm">
+        <span class="comm-rate">22%</span>
+        <span class="comm-type">12 months · 90d cookie</span>
+      </div>
+    </div>
+    <div class="tool-card">
+      <div class="tool-icon" style="background: rgba(80,200,120,0.1);">⚙️</div>
+      <div class="tool-info">
+        <div class="tool-name">systeme.io</div>
+        <div class="tool-desc">All-in-one funnel builder — free plan converts cold traffic</div>
+      </div>
+      <div class="tool-comm">
+        <span class="comm-rate">40%</span>
+        <span class="comm-type">Lifetime recurring · ∞ cookie</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="inside-section">
+    <div class="inside-label">Inside the free checklist</div>
+    <div class="inside-grid">
+      <div class="inside-item">
+        <strong>Commission math included</strong>
+        <span>How many referrals to hit $1k, $5k, $10k/month</span>
+      </div>
+      <div class="inside-item">
+        <strong>Content angles that work</strong>
+        <span>Exactly what to post on Pinterest &amp; Threads</span>
+      </div>
+      <div class="inside-item">
+        <strong>Direct application links</strong>
+        <span>Get approved fast — no large audience required</span>
+      </div>
+      <div class="inside-item">
+        <strong>90-day starter plan</strong>
+        <span>Week-by-week actions from $0 to first commission</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="form-label">Get the Free Checklist</div>
+    <div class="form-sub">Sent to your inbox in under 60 seconds</div>
+    <!-- REPLACE action URL with your ConvertKit / Mailchimp / beehiiv form endpoint -->
+    <form action="YOUR_EMAIL_FORM_ACTION_URL" method="POST">
+      <div class="input-group">
+        <input type="text" name="first_name" placeholder="First name" required>
+        <input type="email" name="email_address" placeholder="Your best email" required>
+      </div>
+      <button type="submit" class="cta-btn">
+        Send Me the Free Checklist →
+      </button>
+      <p class="privacy">Zero spam. Unsubscribe any time. Your email stays private.</p>
+    </form>
+  </div>
+
+  <div class="social-proof">
+    <div class="sp-row">
+      <span class="sp-stars">★★★★★</span>
+    </div>
+    <p class="sp-text">Joined by <strong>1,400+ creators</strong> building passive income with AI tools</p>
+  </div>
+
+  <footer>
+    <p>
+      Affiliate disclosure: Links in this checklist are affiliate links. I earn a commission if you sign up — at no extra cost to you. I only recommend tools I'd actually promote myself.
+      &nbsp;·&nbsp;<a href="#">Privacy</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
