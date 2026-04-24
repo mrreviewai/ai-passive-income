@@ -159,9 +159,23 @@
     <div class="form-label">Get the Free Checklist</div>
     <div class="form-sub">Sent to your inbox in under 60 seconds</div>
     <!-- REPLACE action URL with your ConvertKit / Mailchimp / beehiiv form endpoint -->
-    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-    <iframe src="https://subscribe-forms.beehiiv.com/f529d6c4-0463-4c32-8f06-990825242c9b" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; height: 291px; margin: 0; border-radius: 0px; background-color: transparent; box-shadow: none; max-width: 100%;"></iframe>
+    <div class="input-group">
+      <input type="text" id="fname" placeholder="First name">
+      <input type="email" id="femail" placeholder="Your best email" required>
+    </div>
+    <button type="button" class="cta-btn" onclick="submitBeehiiv()">
+      Send Me the Free Checklist →
+    </button>
     <p class="privacy" style="margin-top:10px">Zero spam. Unsubscribe any time.</p>
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+    <script>
+    function submitBeehiiv() {
+      var email = document.getElementById('femail').value;
+      var name = document.getElementById('fname').value;
+      if (!email) { alert('Please enter your email'); return; }
+      window.open('https://subscribe-forms.beehiiv.com/f529d6c4-0463-4c32-8f06-990825242c9b?email=' + encodeURIComponent(email) + '&first_name=' + encodeURIComponent(name), '_blank');
+    }
+    </script>
   </div>
 
   <div class="social-proof">
