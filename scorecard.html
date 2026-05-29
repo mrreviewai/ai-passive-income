@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Tool Truth Test — Free 12-Point Scorecard | Mr Review AI</title>
+<meta name="description" content="Free 12-point scorecard to audit any AI tool before you pay. Built from 14 months of real tests on 40+ tools.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="The AI Tool Truth Test — Free 12-Point Scorecard">
+<meta property="og:description" content="Audit any AI tool in your trial window. Cut the ones that fail. Save $200/mo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mrreviewai.com/scorecard">
+<script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --bg: #0f1419;
+    --bg-card: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --text-mid: #c9d1d9;
+    --accent: #3fb950;
+    --accent-dark: #1f6f3a;
+    --warn: #d29922;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 36px 22px 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; font-size: 13px; color: var(--accent); font-weight: 700; letter-spacing: 1px; }
+  .brand-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+  h1 { font-size: 38px; line-height: 1.15; margin: 0 0 14px; letter-spacing: -0.5px; }
+  h1 .accent { color: var(--accent); }
+  .lede { font-size: 17px; color: var(--text-mid); margin: 0 0 28px; max-width: 600px; }
+  .proof-row {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px;
+    padding: 14px 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+    font-size: 13px; color: var(--text-mid);
+  }
+  .proof-row strong { color: var(--text); }
+  .proof-item { display: flex; align-items: center; gap: 6px; }
+  .check { color: var(--accent); font-weight: 700; }
+
+  .form-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 26px 24px; margin: 8px 0 32px;
+  }
+  .form-card h2 { font-size: 18px; margin: 0 0 4px; }
+  .form-card p { font-size: 13px; color: var(--text-dim); margin: 0 0 18px; }
+  form { display: flex; gap: 10px; flex-wrap: wrap; }
+  input[type="email"] {
+    flex: 1; min-width: 220px;
+    padding: 13px 16px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--bg); color: var(--text); font-size: 15px;
+    outline: none; transition: border-color 0.15s;
+  }
+  input[type="email"]:focus { border-color: var(--accent); }
+  button {
+    padding: 13px 24px; border-radius: 6px; border: 0;
+    background: var(--accent); color: #0a1b0f; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: background 0.15s;
+  }
+  button:hover { background: #4ec85e; }
+  .fine { font-size: 11px; color: var(--text-dim); margin-top: 12px; line-height: 1.4; }
+
+  .pain { margin: 40px 0 24px; }
+  .pain h3 { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0 14px; }
+  .pain-list { list-style: none; padding: 0; margin: 0; }
+  .pain-list li {
+    padding: 10px 0 10px 24px; position: relative; color: var(--text-mid); font-size: 15px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pain-list li::before {
+    content: "—"; position: absolute; left: 0; color: var(--accent);
+  }
+  .pain-list li:last-child { border-bottom: 0; }
+
+  .inside {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 24px; margin: 32px 0;
+  }
+  .inside h3 { font-size: 16px; margin: 0 0 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+  .grid div { font-size: 13px; color: var(--text-mid); padding-left: 18px; position: relative; }
+  .grid div::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  .who { display: flex; gap: 16px; align-items: flex-start; margin: 32px 0 24px; padding: 20px; background: var(--bg-card); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; }
+  .who-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #0a1b0f; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+  .who p { margin: 0 0 6px; font-size: 14px; color: var(--text-mid); }
+  .who .name { font-size: 13px; color: var(--text); font-weight: 700; margin-top: 6px; }
+
+  .cta-row { margin: 36px 0 0; padding: 22px; text-align: center; border: 1.5px dashed var(--accent); border-radius: 8px; }
+  .cta-row p { margin: 0 0 12px; font-size: 14px; color: var(--text-mid); }
+  .cta-row a { color: var(--accent); font-weight: 700; text-decoration: none; }
+
+  .footer { margin-top: 50px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-dim); text-align: center; }
+  .footer a { color: var(--text-dim); }
+
+  @media (max-width: 540px) {
+    h1 { font-size: 30px; }
+    .grid { grid-template-columns: 1fr; }
+    .wrap { padding: 28px 18px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <div class="brand"><span class="brand-dot"></span> MR REVIEW AI</div>
+
+  <h1>Cut the AI tool that's leaking your money. <span class="accent">Free 12-point test.</span></h1>
+
+  <p class="lede">A printable scorecard I use on every AI tool before the refund window closes. Built from 14 months of testing 40+ tools — most of which I cancelled. Yours free.</p>
+
+  <div class="proof-row">
+    <div class="proof-item"><span class="check">✓</span> <strong>40+ tools</strong>&nbsp;tested</div>
+    <div class="proof-item"><span class="check">✓</span> <strong>14 months</strong>&nbsp;public log</div>
+    <div class="proof-item"><span class="check">✓</span> <strong>$1,200+</strong>&nbsp;refunds claimed</div>
+    <div class="proof-item"><span class="check">✓</span> No sponsored placements</div>
+  </div>
+
+  <div class="form-card">
+    <h2>Get the scorecard now.</h2>
+    <p>Drops in your inbox in under 60 seconds. Printable PDF.</p>
+    <!-- Beehiiv embed form — auto-styled by Beehiiv -->
+    <div id="beehiiv-form-container">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="f7b72817-0e25-4747-a236-0f0db07ae45c"></script>
+    </div>
+    <p class="fine">You'll also get The Saturday Card — one tested tool + one cut tool, every week. No fluff, no affiliate spam, unsubscribe in one click.</p>
+  </div>
+
+  <div class="pain">
+    <h3>This is for you if</h3>
+    <ul class="pain-list">
+      <li>You've paid for an AI tool you haven't opened in three weeks.</li>
+      <li>The pricing page took 4 reads and you still don't know what you'll pay.</li>
+      <li>"Best AI tool" listicles all look identical because they are.</li>
+      <li>You can't tell which tools actually save time vs. which add friction.</li>
+      <li>You need a number, not a vibe, before you keep paying.</li>
+    </ul>
+  </div>
+
+  <div class="inside">
+    <h3>What's inside the scorecard</h3>
+    <div class="grid">
+      <div>Sycophancy check (the one that kills most tools)</div>
+      <div>Source honesty test</div>
+      <div>Day-11 friction audit</div>
+      <div>Output editing time benchmark</div>
+      <div>Voice drift detector</div>
+      <div>Pricing transparency check</div>
+      <div>Export freedom test</div>
+      <div>Support reality probe</div>
+      <div>Cancel friction score</div>
+      <div>Week-3 abandonment risk</div>
+      <div>Refund policy stress test</div>
+      <div>Replaceability filter (vs. ChatGPT/Claude)</div>
+    </div>
+  </div>
+
+  <div class="who">
+    <div class="who-avatar">MR</div>
+    <div>
+      <p>I've been testing AI tools publicly for 14 months without my face on anything. The scorecard is the same one I use before publishing every review on Mr Review AI. It saved me from keeping 3 tools I would have paid for an entire year.</p>
+      <p>If it helps you cut one bad tool, it pays for itself 12x over.</p>
+      <div class="name">— Mr Review AI</div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <p>Scroll back up and grab it ↑</p>
+    <p>Or read the full build-in-public log on <a href="https://mrreviewai.substack.com">Substack</a>.</p>
+  </div>
+
+  <div class="footer">
+    Mr Review AI — We Test The Tools. You Make The Money.<br>
+    <a href="https://mrreviewai.com">mrreviewai.com</a> · <a href="https://mrreviewai.substack.com">substack</a>
+  </div>
+
+</main>
+
+<script>
+  // Light form handling — replace with your ESP webhook + redirect to /thank-you with PDF download link
+  document.getElementById('optin-form').addEventListener('submit', function(e){
+    // Remove this listener once your ESP is wired up.
+    // For now this is a placeholder — wire `action` to your real endpoint.
+  });
+</script>
+
+</body>
+</html>
